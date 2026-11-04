@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Things to bring</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>Things to bring</h1>
+    <p class="intro">Who brings what to our team evening?</p>
+
+    <form class="add" action="/add" method="post">
+      <input name="thing" placeholder="What?" required autocomplete="off" autofocus>
+      <input name="person" placeholder="Who?" required autocomplete="off">
+      <button type="submit">Add</button>
+    </form>
+
+    {% if entries %}
+    <table>
+      <thead>
+        <tr><th>What</th><th>Who</th></tr>
+      </thead>
+      <tbody>
+        {% for entry in entries %}
+        <tr><td>{{ entry.thing }}</td><td>{{ entry.person }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="empty">Nothing here yet.</p>
+    {% endif %}
+  </main>
+</body>
+</html>
