@@ -32,6 +32,8 @@ these ppl are part of our team
 |---|---|
 |a guy | idk |
 | tony | payments |
+|Ron | Boss|
+
 ## How we work
 
 <!-- How your team uses Git. For example:
