@@ -31,7 +31,7 @@ these ppl are part of our team
 | GitHub | Role |
 |---|---|
 |a guy | idk |
-
+| tony | payments |
 ## How we work
 
 <!-- How your team uses Git. For example:
