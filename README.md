@@ -31,6 +31,7 @@ these ppl are part of our team
 | GitHub | Role |
 |---|---|
 |a guy | idk |
+|Ron | Boss|
 
 ## How we work
 
