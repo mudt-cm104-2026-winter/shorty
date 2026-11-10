@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Things to bring</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
   <main>
     <h1>Things to bring</h1>
@@ -20,11 +22,17 @@
     {% if entries %}
     <table>
       <thead>
-        <tr><th>What</th><th>Who</th></tr>
+        <tr>
+          <th>What</th>
+          <th>Who</th>
+        </tr>
       </thead>
       <tbody>
         {% for entry in entries %}
-        <tr><td>{{ entry.thing }}</td><td>{{ entry.person }}</td></tr>
+        <tr>
+          <td>{{ entry.url }}</td>
+          <td>{{ entry.short }}</td>
+        </tr>
         {% endfor %}
       </tbody>
     </table>
@@ -33,4 +41,5 @@
     {% endif %}
   </main>
 </body>
+
 </html>
