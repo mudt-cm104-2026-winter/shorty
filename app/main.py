@@ -19,9 +19,11 @@ from fastapi.templating import Jinja2Templates
 
 from . import storage
 
+import random, string
+
 HERE = Path(__file__).parent
 
-app = FastAPI(title="Things to bring")
+app = FastAPI(title="Url shortener (shorty)")
 app.mount("/static", StaticFiles(directory=HERE / "static"), name="static")
 templates = Jinja2Templates(directory=HERE / "templates")
 
@@ -35,8 +37,19 @@ def show_list(request: Request):
 
 
 @app.post("/add")
-def add(thing: str = Form(...), person: str = Form(...)):
+def add(url: str = Form(...)):
     """The form on the start page sends its fields here."""
-    storage.add_entry(thing=thing.strip(), person=person.strip())
+    storage.add_entry(
+        url=url.strip(), short="".join(random.choices(string.ascii_letters, k=5))
+    )
     # Back to the start page. 303 tells the browser: load it with GET.
     return RedirectResponse("/", status_code=303)
+
+
+@app.get("/short/{short_url}")
+def short_2_long(short_url, request: Request):
+    return templates.TemplateResponse(
+        request,
+        "redirect.html",
+        context={"long_url": storage.search_for_url(short_url)},
+    )

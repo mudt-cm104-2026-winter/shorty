@@ -17,10 +17,17 @@ def all_entries():
     return list(_entries)
 
 
-def add_entry(thing, person):
+def add_entry(url, short):
     """Store a new entry and return it."""
     global _next_id
-    entry = {"id": _next_id, "thing": thing, "person": person}
+    entry = {"id": _next_id, "url": url, "short": short}
     _entries.append(entry)
     _next_id += 1
     return entry
+
+
+def search_for_url(short_url):
+    long_url = next(
+        (item["url"] for item in _entries if item["short"] == short_url), None
+    )
+    return long_url
