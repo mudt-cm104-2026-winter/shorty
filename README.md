@@ -29,10 +29,9 @@ No real names: this repository is public. -->
 
 these ppl are part of our team
 | GitHub | Role |
-|---|---|
-|a guy | idk |
-| tony | payments |
-|Ron | Boss|
+|BigCheese95|---|
+|imjusttypingshit|---|
+|izqkk|---|
 
 ## How we work
 
