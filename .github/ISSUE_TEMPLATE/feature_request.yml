@@ -1,14 +1,14 @@
 name: Feature
 description: New feature or improvement
-title: "[Feature]: "
-labels: ["enhancement"]
+title: '[Feature]: '
+labels: ['enhancement']
 body:
   - type: dropdown
     id: area
     attributes:
       label: Area
       multiple: true
-      options: [Backend, Frontend, Database, Analytics]
+      options: [General, Backend, Frontend, Database, Analytics]
     validations:
       required: true
   - type: textarea
@@ -21,4 +21,4 @@ body:
     id: done
     attributes:
       label: Done when
-      placeholder: "- [ ] ..."
+      placeholder: '- [ ] ...'
