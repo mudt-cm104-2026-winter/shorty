@@ -19,7 +19,7 @@ from fastapi.templating import Jinja2Templates
 
 from . import storage
 
-import random, string
+import random, string, re
 
 HERE = Path(__file__).parent
 
@@ -29,21 +29,28 @@ templates = Jinja2Templates(directory=HERE / "templates")
 
 
 @app.get("/")
-def show_list(request: Request):
-    """The start page: the form and all entries."""
+def show_list(request: Request):  # The start page: the form and all entries.
     return templates.TemplateResponse(
         request, "index.html", {"entries": storage.all_entries()}
     )
 
 
 @app.post("/add")
-def add(url: str = Form(...)):
-    """The form on the start page sends its fields here."""
-    storage.add_entry(
-        url=url.strip(), short="".join(random.choices(string.ascii_letters, k=5))
-    )
-    # Back to the start page. 303 tells the browser: load it with GET.
-    return RedirectResponse("/", status_code=303)
+def add(url: str = Form(...)):  # The form on the start page sends its fields here.
+    if re.fullmatch(
+        r"(?!www\.[a-zA-Z0-9-]+$)(www\.)?[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.[a-zA-Z]{2,}",
+        url,
+    ):
+        storage.add_entry(
+            url=url.strip(), short="".join(random.choices(string.ascii_letters, k=5))
+        )
+        return RedirectResponse(
+            "/",
+            status_code=303,  # Back to the start page. 303 tells the browser: load it with GET.
+        )
+
+    else:
+        return "not a valid url"
 
 
 @app.get("/short/{short_url}")
