@@ -27,11 +27,12 @@ The entries are kept in memory: after a restart the list is empty again.
 <!-- One row per person: GitHub username and what you mainly take care of.
 No real names: this repository is public. -->
 
-these ppl are part of our team
-| GitHub | Role |
-|BigCheese95|---|
-|imjusttypingshit|---|
-|izqkk|---|
+team members
+| GitHub           | Role                        |
+| ---------------- | --------------------------- |
+| imjusttypingshit | backend                     |
+| BigCheese95      | forntend                    |
+| izqkk            | project manager, supervisor |
 
 ## How we work
 
