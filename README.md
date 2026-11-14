@@ -31,7 +31,7 @@ team members
 | GitHub           | Role                        |
 | ---------------- | --------------------------- |
 | imjusttypingshit | backend                     |
-| BigCheese95      | forntend                    |
+| BigCheese95      | frontend                    |
 | izqkk            | project manager, supervisor |
 
 ## How we work
