@@ -8,6 +8,8 @@ this file can be replaced by one that keeps the entries somewhere else.
 As long as the function names stay the same, main.py does not change.
 """
 
+import random, string
+
 _entries = []
 _next_id = 1
 
@@ -15,6 +17,16 @@ _next_id = 1
 def all_entries():
     """Return a copy of all entries, oldest first."""
     return list(_entries)
+
+
+def create_short():
+    short = "".join(random.choices(string.ascii_letters, k=5))
+    for i in _entries:
+        for entry in _entries:
+            if entry["short"] == short:
+                short = "".join(random.choices(string.ascii_letters, k=5))
+
+    return short
 
 
 def add_entry(url, short):
