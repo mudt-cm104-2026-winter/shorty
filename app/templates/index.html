@@ -16,14 +16,13 @@
 
       <form class="add" action="/add" method="post">
         <input
-          name="thing"
-          placeholder="What?"
+          name="url"
+          placeholder="paste your long link here"
           required
           autocomplete="off"
           autofocus
         />
-        <input name="person" placeholder="Who?" required autocomplete="off" />
-        <button type="submit">Add</button>
+        <button type="submit">Shorten</button>
       </form>
 
       {% if entries %}
