@@ -38,6 +38,15 @@
           <tr>
             <td>{{ entry.url }}</td>
             <td>{{ entry.short }}</td>
+            <td>
+              <button
+                type="button"
+                class="copy"
+                onclick="copyLink(this, '{{ entry.short }}')"
+              >
+                Copy
+              </button>
+            </td>
           </tr>
           {% endfor %}
         </tbody>
@@ -46,5 +55,17 @@
       <p class="empty">No links yet.</p>
       {% endif %}
     </main>
+    <script>
+      function copyLink(button, short) {
+        var link = window.location.origin + '/short/' + short;
+
+        navigator.clipboard.writeText(link);
+
+        button.textContent = 'Copied!';
+        setTimeout(function () {
+          button.textContent = 'Copy';
+        }, 2000);
+      }
+    </script>
   </body>
 </html>
