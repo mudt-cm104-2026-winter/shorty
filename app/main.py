@@ -4,10 +4,8 @@ from fastapi import FastAPI, Form, Request
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi import HTTPException  # noqa: F401
 from . import storage
 
-import random, string, re
 
 HERE = Path(__file__).parent
 
@@ -45,7 +43,10 @@ def short_2_long(short_url, request: Request):
     long_url = storage.search_for_url(short_url)
     if not long_url:
         return templates.TemplateResponse(
-            request, "not_found.html", {"entries": storage.all_entries()}
+            request,
+            "not_found.html",
+            {"short_url": short_url},
+            status_code=404,
         )
 
     return RedirectResponse(long_url, status_code=307)
