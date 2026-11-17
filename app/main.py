@@ -1,15 +1,3 @@
-"""Things to bring: the starting point of your team project.
-
-This is an example. Replace the topic with your own: change the fields,
-the texts and the page. Grow it one pull request at a time.
-
-What happens where:
-- main.py      the web part: which address shows what (the "routes")
-- storage.py   where the entries are kept
-- templates/   the HTML page
-- static/      the stylesheet
-"""
-
 from pathlib import Path
 
 from fastapi import FastAPI, Form, Request
@@ -52,10 +40,7 @@ def add(url: str = Form(...)):  # The form on the start page sends its fields he
     )
 
 
-@app.get("/short/{short_url}")
-def short_2_long(short_url, request: Request):
-    return templates.TemplateResponse(
-        request,
-        "redirect.html",
-        context={"long_url": storage.search_for_url(short_url)},
-    )
+@app.api_route("/short/{short_url}", methods=["GET", "HEAD"])
+def short_2_long(short_url):
+    long_url = storage.search_for_url(short_url)
+    return RedirectResponse(long_url, status_code=307)
