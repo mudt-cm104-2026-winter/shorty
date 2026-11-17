@@ -6,28 +6,47 @@
   --accent: #2f6f4f;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   padding: 3rem 1rem;
   background: var(--bg);
   color: var(--fg);
-  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  font:
+    16px/1.5 system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
 }
 
-main { max-width: 36rem; margin: 0 auto; }
+main {
+  max-width: 36rem;
+  margin: 0 auto;
+}
 
-h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.25rem;
+}
 
-.intro, .empty { color: var(--muted); }
+.intro,
+.empty {
+  color: var(--muted);
+}
 
-form.add { display: flex; gap: .5rem; margin: 1.5rem 0 2rem; }
+form.add {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+}
 
 form.add input {
   flex: 1;
   min-width: 0;
-  padding: .6rem .8rem;
+  padding: 0.6rem 0.8rem;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: #fff;
@@ -35,7 +54,7 @@ form.add input {
 }
 
 button {
-  padding: .6rem 1rem;
+  padding: 0.6rem 1rem;
   border: 0;
   border-radius: 6px;
   background: var(--accent);
@@ -44,8 +63,30 @@ button {
   cursor: pointer;
 }
 
-table { width: 100%; border-collapse: collapse; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-th, td { padding: .5rem; border-bottom: 1px solid var(--line); text-align: left; }
+th,
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
 
-th { color: var(--muted); font-weight: 600; }
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+button.copy {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+  min-width: 4.5rem;
+}
+
+td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
