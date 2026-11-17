@@ -4,10 +4,8 @@ from fastapi import FastAPI, Form, Request
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-
 from . import storage
 
-import random, string, re
 
 HERE = Path(__file__).parent
 
@@ -41,6 +39,14 @@ def add(url: str = Form(...)):  # The form on the start page sends its fields he
 
 
 @app.api_route("/short/{short_url}", methods=["GET", "HEAD"])
-def short_2_long(short_url):
+def short_2_long(short_url, request: Request):
     long_url = storage.search_for_url(short_url)
+    if not long_url:
+        return templates.TemplateResponse(
+            request,
+            "not_found.html",
+            {"short_url": short_url},
+            status_code=404,
+        )
+
     return RedirectResponse(long_url, status_code=307)
