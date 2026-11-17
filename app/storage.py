@@ -8,7 +8,7 @@ this file can be replaced by one that keeps the entries somewhere else.
 As long as the function names stay the same, main.py does not change.
 """
 
-import random, string
+import random, string, validators
 
 _entries = []
 _next_id = 1
@@ -27,6 +27,14 @@ def create_short():
                 short = "".join(random.choices(string.ascii_letters, k=5))
 
     return short
+
+
+def validate_url(url):
+    url = url.strip()
+    if not url.startswith(("https://", "http://")):
+        url = "https://" + url
+
+    return url if validators.url(url) else None
 
 
 def add_entry(url, short):
