@@ -42,15 +42,17 @@ def add(url: str = Form(...)):  # The form on the start page sends its fields he
         url,
     ):
         storage.add_entry(
-            url=url.strip(), short="".join(random.choices(string.ascii_letters, k=5))
-        )
-        return RedirectResponse(
-            "/",
-            status_code=303,  # Back to the start page. 303 tells the browser: load it with GET.
+            url=url.strip(),
+            short=storage.create_short(),
         )
 
     else:
         return "not a valid url"
+
+    return RedirectResponse(
+        "/",
+        status_code=303,  # Back to the start page. 303 tells the browser: load it with GET.
+    )
 
 
 @app.get("/short/{short_url}")
