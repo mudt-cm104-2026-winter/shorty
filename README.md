@@ -1,11 +1,8 @@
-# Team project
-
-<!-- Replace the title with your project name. -->
+# Shorty
 
 ## What this is
 
-<!-- One or two sentences: what does your app do, and who is it for?
-Right now it is the example "Things to bring". Replace it with your topic. -->
+Shorty can turn a long URL into a short link. It can be used by anyone who is sick and tired of long, clumsy URL links.
 
 ## How to run it
 
@@ -32,9 +29,6 @@ docker run -p 8000:8000 shorty
 Then open http://127.0.0.1:8000 in your browser.
 
 ## Team
-
-<!-- One row per person: GitHub username and what you mainly take care of.
-No real names: this repository is public. -->
 
 team members
 | GitHub           | Role                        |
