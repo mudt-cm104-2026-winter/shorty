@@ -18,6 +18,7 @@
         <input
           name="url"
           placeholder="paste your long link here"
+          value="{{ value or '' }}"
           required
           autocomplete="off"
           autofocus
@@ -25,7 +26,9 @@
         <button type="submit">Shorten</button>
       </form>
 
-      {% if entries %}
+      {% if error %}
+      <p class="error">{{ error }}</p>
+      {% endif %} {% if entries %}
       <table>
         <thead>
           <tr>

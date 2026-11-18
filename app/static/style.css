@@ -90,3 +90,8 @@ td:last-child {
   text-align: right;
   white-space: nowrap;
 }
+
+.error {
+  color: #b00020;
+  margin: -1rem 0 1.5rem;
+}
