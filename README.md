@@ -22,6 +22,15 @@ Then open http://127.0.0.1:8000 in your browser. Stop it with `Ctrl+C`.
 
 The entries are kept in memory: after a restart the list is empty again.
 
+### With Docker
+
+```bash
+docker build -t shorty .
+docker run -p 8000:8000 shorty
+```
+
+Then open http://127.0.0.1:8000 in your browser.
+
 ## Team
 
 <!-- One row per person: GitHub username and what you mainly take care of.
