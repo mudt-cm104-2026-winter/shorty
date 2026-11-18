@@ -22,10 +22,21 @@ def show_list(request: Request):  # The start page: the form and all entries.
 
 
 @app.post("/add")
-def add(url: str = Form(...)):  # The form on the start page sends its fields here.
+def add(
+    request: Request, url: str = Form(...)
+):  # The form on the start page sends its fields here.
     valid_url = storage.validate_url(url)
     if not valid_url:
-        return "not a valid url"
+        return templates.TemplateResponse(
+            request,
+            "index.html",
+            {
+                "entries": storage.all_entries(),
+                "error": "That doesn't look like a link",
+                "value": url,
+            },
+            status_code=400,
+        )
 
     storage.add_entry(
         url=valid_url,
