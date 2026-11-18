@@ -20,16 +20,16 @@ uvicorn app.main:app --reload
 
 Then open http://127.0.0.1:8000 in your browser. Stop it with `Ctrl+C`.
 
-The entries are kept in memory: after a restart the list is empty again.
+The entries are saved in `data/shorty.db` (sqlite) so they are still there after a restart.
 
 ### With Docker
 
 ```bash
 docker build -t shorty .
-docker run -p 8000:8000 shorty
+docker run -p 8000:8000 -v shorty-data:/code/data shorty
 ```
 
-Then open http://127.0.0.1:8000 in your browser.
+Then open http://127.0.0.1:8000 in your browser. The volume `shorty-data` keeps the links when the container is removed.
 
 ## Team
 
