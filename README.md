@@ -1,11 +1,7 @@
-# Team project
-
-<!-- Replace the title with your project name. -->
+# SHORTY - a simple link shortener
 
 ## What this is
-
-<!-- One or two sentences: what does your app do, and who is it for?
-Right now it is the example "Things to bring". Replace it with your topic. -->
+`SHORTY` is a simple url shortener using python and fastAPI as the backend running in a docker container. It generates 5 random letters, upper and lowercase, for each valid link. 
 
 ## How to run it
 
