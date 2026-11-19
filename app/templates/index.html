@@ -32,15 +32,19 @@
       <table>
         <thead>
           <tr>
-            <th>What</th>
-            <th>Who</th>
+            <th>Original link</th>
+            <th>Short link</th>
           </tr>
         </thead>
         <tbody>
           {% for entry in entries %}
           <tr>
             <td>{{ entry.url }}</td>
-            <td>{{ entry.short }}</td>
+            <td>
+              <a href="/short/{{ entry.short }}"
+                >{{ request.base_url }}short/{{ entry.short }}</a
+              >
+            </td>
             <td>
               <button
                 type="button"
