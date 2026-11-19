@@ -2,7 +2,7 @@
 
 ## What this is
 
-Shroty is a simple URL shortener that uses Python and FastAPI for its backend. The frontend is kept simple on purpose so there is no useless stuff.
+Shroty is a simple URL shortener that uses Python and FastAPI for its backend. It generates five random letters, both upper and lower case, for each valid link. The frontend is kept simple on purpose so there is no useless stuff.
 
 ## How to run it
 
