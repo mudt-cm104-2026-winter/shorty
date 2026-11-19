@@ -1,11 +1,8 @@
-# Team project
-
-<!-- Replace the title with your project name. -->
+# Shorty
 
 ## What this is
 
-<!-- One or two sentences: what does your app do, and who is it for?
-Right now it is the example "Things to bring". Replace it with your topic. -->
+Shroty is a simple URL shortener that uses Python and FastAPI for its backend. The frontend is kept simple on purpose so there is no useless stuff.
 
 ## How to run it
 
@@ -33,15 +30,12 @@ Then open http://127.0.0.1:8000 in your browser.
 
 ## Team
 
-<!-- One row per person: GitHub username and what you mainly take care of.
-No real names: this repository is public. -->
-
 team members
-| GitHub           | Role                        |
+| GitHub | Role |
 | ---------------- | --------------------------- |
-| imjusttypingshit | backend                     |
-| BigCheese95      | frontend                    |
-| izqkk            | project manager, supervisor |
+| imjusttypingshit | backend |
+| BigCheese95 | frontend |
+| izqkk | project manager, supervisor |
 
 ## How we work
 
