@@ -2,7 +2,7 @@
 
 ## What this is
 
-Shorty can turn a long URL into a short link. It can be used by anyone who is sick and tired of long, clumsy URL links.
+Shroty is a simple URL shortener that uses Python and FastAPI for its backend. The frontend is kept simple on purpose so there is no useless stuff.
 
 ## How to run it
 
@@ -31,11 +31,11 @@ Then open http://127.0.0.1:8000 in your browser.
 ## Team
 
 team members
-| GitHub           | Role                        |
+| GitHub | Role |
 | ---------------- | --------------------------- |
-| imjusttypingshit | backend                     |
-| BigCheese95      | frontend                    |
-| izqkk            | project manager, supervisor |
+| imjusttypingshit | backend |
+| BigCheese95 | frontend |
+| izqkk | project manager, supervisor |
 
 ## How we work
 
